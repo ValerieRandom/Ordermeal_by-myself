@@ -8,8 +8,8 @@ public class Dish {
 
     public Dish(String dishName, int dishNumber, int dishPrice) {
         this.DishName = dishName;
-        this.DishNumber = dishPrice;
-        this.DishPrice = dishNumber;
+        this.DishNumber = dishNumber;
+        this.DishPrice = dishPrice;
     }
 
     public Dish() {
@@ -40,9 +40,13 @@ public class Dish {
         DishPrice = dishPrice;
     }
 
+    // 靜態初始化塊
+    private static Dish FriedRice;
+    private static Dish RoastChicken;
+    private static Dish RoastDuck;
+    private static Dish RoastBeef;
 
-    // 建構菜品 注意這裡是方法類 所以不能直接執行代碼 以下就是直接執行代碼的範疇 我們需要包裝到靜態方法中才可以消除紅字
-    public static String DishesInital(){
+    public static void DishesInital() {
 
         // 第一種建置方法
         Dish FriedRice = new Dish();
@@ -56,6 +60,7 @@ public class Dish {
         Dish RoastChicken = new Dish("烤雞", 2, 100);
         Dish RoastDuck = new Dish("烤鴨", 3, 200);
         Dish RoastBeef = new Dish("烤大牛排", 4, 300);
+
         // 第三種建置方法：可以創建一個 arraylist 將菜品建置進去 然後進行遍歷
 
         /* 第四種建置方法： (前提 此方法返回類型為 Dish )
@@ -67,24 +72,19 @@ public class Dish {
             new Dish("烤大牛排", 300, 4)
         };
          */
-
-        // 將菜品組合成一個字符串
-        String menu = "菜單:\n";
-        menu += "1. " + FriedRice.getDishName() + " - 價格: $" + FriedRice.getDishPrice() + "\n";
-        menu += "2. " + RoastChicken.getDishName() + " - 價格: $" + RoastChicken.getDishPrice() + "\n";
-        menu += "3. " + RoastDuck.getDishName() + " - 價格: $" + RoastDuck.getDishPrice() + "\n";
-        menu += "4. " + RoastBeef.getDishName() + " - 價格: $" + RoastBeef.getDishPrice() + "\n";
-
-        return menu;
-
     }
 
-    // 顯示菜單的方法
-    public static void ShowDishMenu(int FirstCommend){
-
-        System.out.println(DishesInital());
-
+        // 生成菜單
+        public static String generateMenu() {
+            // 將菜品組合成一個字符串
+            String menu = "菜單:\n";
+            menu += "1. " + FriedRice.getDishName() + " - 價格: $" + FriedRice.getDishPrice() + "\n";
+            menu += "2. " + RoastChicken.getDishName() + " - 價格: $" + RoastChicken.getDishPrice() + "\n";
+            menu += "3. " + RoastDuck.getDishName() + " - 價格: $" + RoastDuck.getDishPrice() + "\n";
+            menu += "4. " + RoastBeef.getDishName() + " - 價格: $" + RoastBeef.getDishPrice() + "\n";
+            return menu;
         }
+
 
 }
 

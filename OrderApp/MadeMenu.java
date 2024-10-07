@@ -4,15 +4,13 @@ import java.util.Scanner;
 
 public class MadeMenu {
 
-    public int FirstCommend;
-    public int SecondCommend;
 
     public static void ShowMainMenu() {
 
         // 印出菜單項目
-        System.out.printf("1. 全店菜品顯示 ");
-        System.out.printf("2. 已點項目 ");
-        System.out.printf("3. 結帳 ");
+        System.out.println("1. 全店菜品顯示 " );
+        System.out.println("2. 已點項目 ");
+        System.out.println("3. 結帳 ");
 
     }
 

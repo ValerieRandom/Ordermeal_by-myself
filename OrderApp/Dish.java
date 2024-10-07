@@ -41,15 +41,15 @@ public class Dish {
     }
 
     // 靜態初始化塊
-    private static Dish FriedRice;
-    private static Dish RoastChicken;
-    private static Dish RoastDuck;
-    private static Dish RoastBeef;
+    static Dish FriedRice;
+    static Dish RoastChicken;
+    static Dish RoastDuck;
+    static Dish RoastBeef;
 
     public static void DishesInital() {
 
         // 第一種建置方法
-        Dish FriedRice = new Dish();
+        FriedRice = new Dish();
         // 設定屬性
         FriedRice.setDishName("炒飯");
         FriedRice.setDishPrice(10);
@@ -57,9 +57,9 @@ public class Dish {
 
         // 第二種建置方法
         // 創建一個新的 Dish 物件及使用 Dish constructor
-        Dish RoastChicken = new Dish("烤雞", 2, 100);
-        Dish RoastDuck = new Dish("烤鴨", 3, 200);
-        Dish RoastBeef = new Dish("烤大牛排", 4, 300);
+        RoastChicken = new Dish("烤雞", 2, 100);
+        RoastDuck = new Dish("烤鴨", 3, 200);
+        RoastBeef = new Dish("烤大牛排", 4, 300);
 
         // 第三種建置方法：可以創建一個 arraylist 將菜品建置進去 然後進行遍歷
 
